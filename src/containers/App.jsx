@@ -2,9 +2,11 @@ import logo from "../assets/logo.svg";
 import CustomScrollbars from "../components/CustomScrollbars";
 import { Counter } from "../components/Counter";
 import "./App.scss";
-// import { Col, Container, Row } from "reactstrap";
+import { Col, Container, Row } from "reactstrap";
 
 import "../assets/scss/style.scss";
+import TodoForm from "../components/TodoForm";
+import TodoList from "../components/TodoList";
 // @@if(darktheme== 'true'){
 // <link rel="stylesheet" href="assets/css/layout-dark.css">
 // }
@@ -15,54 +17,148 @@ import "../assets/scss/style.scss";
 function App() {
   return (
     <CustomScrollbars style={{ height: "100vh", width: "100%" }}>
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <Counter />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <span>
-            <span>Learn </span>
-            <a
-              className="App-link"
-              href="https://reactjs.org/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              React
-            </a>
-            <span>, </span>
-            <a
-              className="App-link"
-              href="https://redux.js.org/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Redux
-            </a>
-            <span>, </span>
-            <a
-              className="App-link"
-              href="https://redux-toolkit.js.org/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Redux Toolkit
-            </a>
-            ,<span> and </span>
-            <a
-              className="App-link"
-              href="https://react-redux.js.org/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              React Redux
-            </a>
-          </span>
-        </header>
-        <div style={{ height: "500px" }}></div>
-      </div>
+      <Container>
+        <Row>
+          <TodoForm />
+        </Row>
+        <Row>
+          <TodoList />
+        </Row>
+        
+        <Row>
+          <div className="App">
+            <header className="App-header">
+              <img src={logo} className="App-logo" alt="logo" />
+              <Counter />
+              <p>
+                Edit <code>src/App.js</code> and save to reload.
+              </p>
+              <span>
+                <span>Learn </span>
+                <a
+                  className="App-link"
+                  href="https://reactjs.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  React
+                </a>
+                <span>, </span>
+                <a
+                  className="App-link"
+                  href="https://redux.js.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Redux
+                </a>
+                <span>, </span>
+                <a
+                  className="App-link"
+                  href="https://redux-toolkit.js.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Redux Toolkit
+                </a>
+                ,<span> and </span>
+                <a
+                  className="App-link"
+                  href="https://react-redux.js.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  React Redux
+                </a>
+              </span>
+            </header>
+            <div style={{ height: "500px" }}></div>
+          </div>
+        </Row>
+        <Row>
+          <Col className="bg-light border">.col</Col>
+        </Row>
+        <Row>
+          <Col className="bg-light border">.col</Col>
+          <Col className="bg-light border">.col</Col>
+          <Col className="bg-light border">.col</Col>
+          <Col className="bg-light border">.col</Col>
+        </Row>
+        <Row>
+          <Col className="bg-light border" xs="3">
+            .col-3
+          </Col>
+          <Col className="bg-light border" xs="auto">
+            .col-auto - variable width content
+          </Col>
+          <Col className="bg-light border" xs="3">
+            .col-3
+          </Col>
+        </Row>
+        <Row>
+          <Col className="bg-light border" xs="6">
+            .col-6
+          </Col>
+          <Col className="bg-light border" xs="6">
+            .col-6
+          </Col>
+        </Row>
+        <Row>
+          <Col className="bg-light border" sm="4" xs="6">
+            .col-6 .col-sm-4
+          </Col>
+          <Col className="bg-light border" sm="4" xs="6">
+            .col-6 .col-sm-4
+          </Col>
+          <Col className="bg-light border" sm="4">
+            .col-sm-4
+          </Col>
+        </Row>
+        <Row>
+          <Col
+            className="bg-light border"
+            sm={{
+              offset: 1,
+              order: 2,
+              size: 6,
+            }}
+          >
+            .col-sm-6 .order-sm-2 .offset-sm-1
+          </Col>
+        </Row>
+        <Row>
+          <Col
+            className="bg-light border"
+            md={{
+              offset: 3,
+              size: 6,
+            }}
+            sm="12"
+          >
+            .col-sm-12 .col-md-6 .offset-md-3
+          </Col>
+        </Row>
+        <Row>
+          <Col
+            className="bg-light border"
+            sm={{
+              offset: 1,
+              size: "auto",
+            }}
+          >
+            .col-sm-auto .offset-sm-1
+          </Col>
+          <Col
+            className="bg-light border"
+            sm={{
+              offset: 1,
+              size: "auto",
+            }}
+          >
+            .col-sm-auto .offset-sm-1
+          </Col>
+        </Row>
+      </Container>
 
       <div className="loader-bg">
         <div className="loader-track">
@@ -70,7 +166,7 @@ function App() {
         </div>
       </div>
 
-      <nav className="pcoded-navbar menu-light ">
+      {/* <nav className="pcoded-navbar menu-light ">
         <div className="navbar-wrapper  ">
           <div className="navbar-content scroll-div ">
             <div className="">
@@ -297,7 +393,7 @@ function App() {
             </div>
           </div>
         </div>
-      </nav>
+      </nav> */}
 
       <header className="navbar pcoded-header navbar-expand-lg navbar-light header-blue">
         <div className="m-header">
@@ -1482,91 +1578,6 @@ function App() {
           </div>
         </div>
       </div>
-      {/* <Container>
-        <Row>
-          <Col className="bg-light border">.col</Col>
-        </Row>
-        <Row>
-          <Col className="bg-light border">.col</Col>
-          <Col className="bg-light border">.col</Col>
-          <Col className="bg-light border">.col</Col>
-          <Col className="bg-light border">.col</Col>
-        </Row>
-        <Row>
-          <Col className="bg-light border" xs="3">
-            .col-3
-          </Col>
-          <Col className="bg-light border" xs="auto">
-            .col-auto - variable width content
-          </Col>
-          <Col className="bg-light border" xs="3">
-            .col-3
-          </Col>
-        </Row>
-        <Row>
-          <Col className="bg-light border" xs="6">
-            .col-6
-          </Col>
-          <Col className="bg-light border" xs="6">
-            .col-6
-          </Col>
-        </Row>
-        <Row>
-          <Col className="bg-light border" sm="4" xs="6">
-            .col-6 .col-sm-4
-          </Col>
-          <Col className="bg-light border" sm="4" xs="6">
-            .col-6 .col-sm-4
-          </Col>
-          <Col className="bg-light border" sm="4">
-            .col-sm-4
-          </Col>
-        </Row>
-        <Row>
-          <Col
-            className="bg-light border"
-            sm={{
-              offset: 1,
-              order: 2,
-              size: 6,
-            }}
-          >
-            .col-sm-6 .order-sm-2 .offset-sm-1
-          </Col>
-        </Row>
-        <Row>
-          <Col
-            className="bg-light border"
-            md={{
-              offset: 3,
-              size: 6,
-            }}
-            sm="12"
-          >
-            .col-sm-12 .col-md-6 .offset-md-3
-          </Col>
-        </Row>
-        <Row>
-          <Col
-            className="bg-light border"
-            sm={{
-              offset: 1,
-              size: "auto",
-            }}
-          >
-            .col-sm-auto .offset-sm-1
-          </Col>
-          <Col
-            className="bg-light border"
-            sm={{
-              offset: 1,
-              size: "auto",
-            }}
-          >
-            .col-sm-auto .offset-sm-1
-          </Col>
-        </Row>
-      </Container> */}
     </CustomScrollbars>
   );
 }
