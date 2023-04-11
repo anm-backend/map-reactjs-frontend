@@ -7,6 +7,7 @@ import { Col, Container, Row } from "reactstrap";
 import "../assets/scss/style.scss";
 import TodoForm from "../components/TodoForm";
 import TodoList from "../components/TodoList";
+import SimpleMap from "./Map";
 // @@if(darktheme== 'true'){
 // <link rel="stylesheet" href="assets/css/layout-dark.css">
 // }
@@ -17,7 +18,8 @@ import TodoList from "../components/TodoList";
 function App() {
   return (
     <CustomScrollbars style={{ height: "100vh", width: "100%" }}>
-      <Container>
+
+      {/* <Container>
         <Row>
           <TodoForm />
         </Row>
@@ -395,7 +397,7 @@ function App() {
         </div>
       </nav> */}
 
-      <header className="navbar pcoded-header navbar-expand-lg navbar-light header-blue">
+      {/* <header className="navbar pcoded-header navbar-expand-lg navbar-light header-blue">
         <div className="m-header">
           <a className="mobile-menu" id="mobile-collapse" href="#!">
             <span></span>
@@ -1577,7 +1579,8 @@ function App() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
+      <SimpleMap></SimpleMap>
     </CustomScrollbars>
   );
 }
